@@ -1,1 +1,1 @@
-# gjp-java-spring-boot
+# svc-spring-boot
