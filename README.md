@@ -6,7 +6,10 @@
 * Java Extension Pack
 * Lombok Annotations Support for VS Code
 
-## Getting Started
+## Related URLs
+
+* [Spring Boot Reference Documentation](https://docs.spring.io/spring-boot/docs/2.2.4.RELEASE/reference/htmlsingle/)
+* [Baeldung](https://www.baeldung.com/)
 
 ### Reference Documentation
 For further reference, please consider the following sections:
