@@ -8,7 +8,7 @@
 
 ## Related URLs
 
-* [Spring Boot Reference Documentation](https://docs.spring.io/spring-boot/docs/2.2.4.RELEASE/reference/htmlsingle/)
+* [Spring Boot Reference Documentation](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
 * [Baeldung](https://www.baeldung.com/)
 
 ### Reference Documentation
