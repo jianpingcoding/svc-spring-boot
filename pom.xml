@@ -10,9 +10,9 @@
 	</parent>
 
 	<groupId>org.ganjp</groupId>
-	<artifactId>api</artifactId>
+	<artifactId>svc-sb-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>svc-spring-boot</name>
 	<description>Spring Boot Services</description>
@@ -53,6 +53,8 @@
 		</dependency>
 	</dependencies>
 
+
+    <!-- Package as an executable jar -->
 	<build>
 		<plugins>
 			<plugin>
