@@ -28,9 +28,15 @@
 * jar tvf target/vc-sb-api-0.0.1-SNAPSHOT.jar  : jar -tf will list the files in the jar.
 * java -jar target/vc-sb-api-0.0.1-SNAPSHOT.jar : To run that application
 
+## Local Rest URLs
+* http://localhost:8080/rest/string
+* http://localhost:8080/rest/hello?name=Jeck
+* http://localhost:8080/rest/map
+
+## Local actuator URLs
+* curl localhost:8080/actuator/health
 
 ## Related URLs
-
 * [Spring Initializr](https://start.spring.io/)
 * [Spring Boot Reference Documentation](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/)
 * [Baeldung](https://www.baeldung.com/)
