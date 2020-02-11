@@ -22,7 +22,9 @@
 * mvn package : it will compile your code and also package it. 
 * mvn install : it will compile and package, but it will also put the package in your local repository. 
 * mvn dependency:tree : prints a tree representation of your project dependencies.
-* mvn spring-boot:run
+* mvn spring-boot:run : Run the springboot application.
+* export MAVEN_OPTS=-Xmx1024m : Setting Memory for maven.
+* -Dspring.devtools.restart.enabled=false : Disable  Developer tools
 
 ## Jar
 * jar tvf target/vc-sb-api-0.0.1-SNAPSHOT.jar  : jar -tf will list the files in the jar.
