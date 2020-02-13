@@ -29,6 +29,7 @@
 ## Jar
 * jar tvf target/vc-sb-api-0.0.1-SNAPSHOT.jar  : jar -tf will list the files in the jar.
 * java -jar target/vc-sb-api-0.0.1-SNAPSHOT.jar --name="Spring" --debug --server.port=9000: To run that application
+* java -jar target/vc-sb-api-0.0.1-SNAPSHOT.jar --spring.profiles.active=dev
 * SPRING_APPLICATION_JSON='{"acme":{"name":"test"}}' java -jar myapp.jar
 * java -Dspring.application.json='{"name":"test"}' -jar myapp.jar
 * java -jar myapp.jar --spring.application.json='{"name":"test"}'

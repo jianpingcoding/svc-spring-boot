@@ -1,0 +1,13 @@
+server:
+    port: 8080
+
+
+acme:
+    remote-address: 192.168.1.1
+    security:
+        username: admin
+        roles:
+          - USER
+          - ADMIN
+
+
