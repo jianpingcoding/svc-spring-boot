@@ -10,8 +10,8 @@
 	</parent>
 
 	<groupId>org.ganjp</groupId>
-	<artifactId>svc-sb-api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>api-sb</artifactId>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
 	<name>svc-spring-boot</name>
