@@ -1,13 +1,12 @@
 # api-spring-boot
 
-This README outlines the details of collaborating on this Spring Boot 2.2.x application.
-A short introduction of this app could easily go here.
+Spring Boot web service API
 
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
 
-* Java 8, up to Java 13. (java -version)
+* Java 8, up to Java 14. (java -version)
 * Maven 3.3+ (mvn version) : brew install maven / sudo apt-get install maven.
 * Gradle 5.x
 * Tomcat 9.0 (Servlet 4.0), Jetty 9.4 (Servlet 3.1), Undertow 2.0 (Servlet 4.0)
@@ -35,6 +34,7 @@ You will need the following things properly installed on your computer.
 * http://localhost:8080/rest/hello?name=Jeck
 * http://localhost:8080/rest/map
 * http://localhost:8080/actuator/health
+* http://localhost:8080/actuator/flyway
 
 ### Maven
 

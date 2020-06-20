@@ -1,6 +1,43 @@
 server:
     port: 8080
 
+# basic setting
+spring:
+    application:
+        name: "spring-boot-api"
+    datasource:
+        driverClassName: "org.mariadb.jdbc.Driver"
+        url: "jdbc:mariadb://localhost:3306/apidb?autoreconnect=true&useUnicode=true&characterEncoding=UTF-8"
+        username: "root"
+        password: "1qazxsw2"
+        # Keep the connection alive if idle for a long time (needed in production)
+        testWhileIdle: true
+        validationQuery: "SELECT 1"
+    jpa:
+        hibernate:
+            ddl-auto: "none"  # created-drop
+        database-platform: "org.hibernate.dialect.MySQL57Dialect"
+        generate-ddl: true
+        show-sql: true
+    flyway:
+        locations: "classpath:db/migration/{vendor}"  # "filesystem:/opt/migration/{vendor}"
+        group: true
+
+# flyway.url, flyway.user, flyway.password is optional.
+# If we have a separate user for dao migration then we can specify using those properties.
+flyway:
+   enabled: true
+   baseline-on-migrate: false # set to true if dao has some already table
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include:
+                    - info
+                    - health
+                    - flyway
+
 acme:
     remote-address: 192.168.1.1
     security:
