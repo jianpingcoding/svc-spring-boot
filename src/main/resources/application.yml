@@ -6,8 +6,8 @@ spring:
     application:
         name: "spring-boot-api"
     datasource:
-        driverClassName: "org.mariadb.jdbc.Driver"
-        url: "jdbc:mariadb://localhost:3306/apidb?autoreconnect=true&useUnicode=true&characterEncoding=UTF-8"
+        driverClassName: "com.mysql.cj.jdbc.Driver"
+        url: "jdbc:mysql://localhost:3306/apidb?autoreconnect=true&useUnicode=true&characterEncoding=UTF-8"
         username: "root"
         password: "1qazxsw2"
         # Keep the connection alive if idle for a long time (needed in production)
@@ -16,18 +16,25 @@ spring:
     jpa:
         hibernate:
             ddl-auto: "none"  # created-drop
-        database-platform: "org.hibernate.dialect.MySQL57Dialect"
         generate-ddl: true
         show-sql: true
+    # flyway.url, flyway.user, flyway.password is optional.
+    # If we have a separate user for dao migration then we can specify using those properties.
     flyway:
+        enabled: true
         locations: "classpath:db/migration/{vendor}"  # "filesystem:/opt/migration/{vendor}"
+        sql-migration-prefix: "V" # Default prefix is V
+        repeatable-sql-migration-prefix: "R"
+        sql-migration-separator: "__"
+        sql-migration-suffixes: "sql"
         group: true
-
-# flyway.url, flyway.user, flyway.password is optional.
-# If we have a separate user for dao migration then we can specify using those properties.
-flyway:
-   enabled: true
-   baseline-on-migrate: false # set to true if dao has some already table
+        baselineOnMigrate: false # set to true if dao has some already table
+        baselineVersion: 20200621132000
+        # placeholder ${schema_name} in sql
+        placeholder-prefix: "${"
+        placeholder-replacement: true
+        placeholder-suffix: "}"
+        placeholders.schema_name: "test"
 
 management:
     endpoints:

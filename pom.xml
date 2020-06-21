@@ -48,6 +48,12 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.flywaydb</groupId>
@@ -70,12 +76,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 	</dependencies>
 
@@ -89,6 +89,17 @@
 				<!-- <configuration>
 					<excludeDevtools>false</excludeDevtools>
 				</configuration> -->
+			</plugin>
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>6.4.4</version>
+				<configuration>
+					<url>jdbc:mysql://localhost:3306/apidb</url>
+					<user>root</user>
+					<password>1qazxsw2</password>
+					<locations>filesystem:src/main/resources/db/migration/mysql</locations>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

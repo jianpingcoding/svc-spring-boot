@@ -1,0 +1,2 @@
+INSERT INTO auth_user (id,name,mobile_number,email,password,created_by,created_at,updated_by,updated_at,is_active) VALUES
+('4028c8456b72efdd016b72f64f960004','tester','6588888888','tester@gmail.com','$2a$10$MSPQ1Y0GUh8jI05IoqBl7.VWMUgBqgVo3AUFCJVzsGya2DvrkJVnC','system','2020-06-20 22:36:53',null,null,1);

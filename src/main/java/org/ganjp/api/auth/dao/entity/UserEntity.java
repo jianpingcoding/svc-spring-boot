@@ -1,8 +1,6 @@
 package org.ganjp.api.auth.dao.entity;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
 import org.ganjp.api.core.dao.entity.BaseEntity;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -22,6 +20,8 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "auth_user")
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode()
 @ToString(callSuper = true)
 public class UserEntity extends BaseEntity {
