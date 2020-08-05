@@ -1,0 +1,49 @@
+<configuration>
+    <!-- default includes from spring-boot -->
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+
+    <springProperty scope="context" name="app.name" source="spring.application.name" defaultValue="name-not-configured"/>
+    <springProperty scope="context" name="log.path" source="log.path" defaultValue="/Users/logs/"/>
+    <springProperty scope="context" name="log.root.level" source="log.root.level" defaultValue="INFO"/>
+    <springProperty scope="context" name="log.app.level" source="log.obs.level" defaultValue="DEBUG"/>
+
+    <property name="LOG_FILE" value="${log.path}/${app.name}.log" />
+    <property name="CONSOLE_LOG_PATTERN" value="%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n"/>
+    <property name="FILE_LOG_PATTERN" value="%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n"/>
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n
+            </Pattern>
+        </layout>
+    </appender>
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+            <fileNamePattern>${LOG_FILE}.%i</fileNamePattern>
+        </rollingPolicy>
+
+        <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+            <MaxFileSize>10MB</MaxFileSize>
+        </triggeringPolicy>
+
+        <layout class="net.logstash.logback.layout.LogstashLayout"></layout>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <lineSeparator>UNIX</lineSeparator>
+        </encoder>
+    </appender>
+
+    <logger name="com.hazelcast" level="ERROR"/>
+
+    <logger name="org.ganjp.api" level="${log.app.level}" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </logger>
+
+    <root level="${log.root.level}" additivity="false">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>
