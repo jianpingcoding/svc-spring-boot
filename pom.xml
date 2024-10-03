@@ -22,7 +22,7 @@
 		<flyway-core.version>6.4.4</flyway-core.version>
 		<flyway-maven-plugin.version>6.4.4</flyway-maven-plugin.version>
 		<crnk.version>3.2.20200419165537</crnk.version>
-		<commons-io.version>2.7</commons-io.version>
+		<commons-io.version>2.14.0</commons-io.version>
 		<logstash-logback-encoder.version>6.4</logstash-logback-encoder.version>
 	</properties>
 
